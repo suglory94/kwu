@@ -1,0 +1,35 @@
+1번
+LinkedList 클래스
+멤버 변수로 head와 tail 노드를 둠
+생성자에서 두 노드 NULL으로 초기화
+소멸자에서 메모리 해제
+
+메모리 해제
+delete head; 후 head = NULL;
+delete head;
+head가 가리키는 노드의 메모리 해제
+head 변수 자체는 스택 메모리에 그대로 남아 있음
+heap 메모리에서 해당 노드가 삭제됨
+
+head = NULL;
+dangling pointer 문제 방지
+
+
+2번
+상속 class 클래스명 : 접근제한자 클래스명
+
+c++에서 localtime은 현재 지역 시간
+
+time_t 타입 : 1970년 1월 1일 00시 00분 (UTC) 부터 지금까지 초단위의 시간을 정수값으로 표현하는 데이터
+tm 구조체 : 초 tm_sec [0, 60] , 분 tm_min [0, 59] , 시 tm_hour [0, 23]
+
+time() 함수 : 반환형 - time_t 데이터 타입
+                  매개변수 - time_t의 포인터 타입
+                  1970년 1월 1일 0시 (UTC) 부터 현재까지 흐른 시간을 time_t타입으로 반환
+
+localtime() 함수 : 반환형 - struct tm*
+                         매개변수 - const time_t*
+                         시간을 변환해서 tm에 넣어서 반환
+
+setTime()에서 음수가 나오며 24시간 형식이 안되는 문제 발생 
+-> 24시간 형식을 맞추기 위해서 (h + 24 - ?) % 24 적용
